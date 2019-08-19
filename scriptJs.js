@@ -1,91 +1,52 @@
-const style = `
-  position: absolute;
-  top: -999px;
-  left: 0px;
-  right: auto;
-  bottom: auto;
-  border: 0px;
-  box-sizing: content-box;
-  word-wrap: break-word;
-  overflow: hidden;
-  height: 0px !important;
-  min-height: 0px !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0px;
-  text-transform: none;
-  word-spacing-new: 0px;
-  text-indent: 0px;
-  line-height: 20px;
-  width: 191px;
-`;
-
-function styleToObject(str) {
-
-   //str = 'position: absolute;';
-
-    let obj = {};
-
-   let splitArr = str.split(';')
-    //console.log(splitArr);
-    for (var key of splitArr){
-       let sliceStr = key.slice(3);
-       //box-sizing: content-box
-       // console.log(sliceStr);
-       //let tempArr = sliceStr.split(': ')
-        let indexSlice = sliceStr.indexOf(':');
-        let keyOfObj = sliceStr.slice(0, indexSlice);
-        //console.log(keyOfObj);
-        //position:
-        let valueOfKeyObj = sliceStr.slice(indexSlice + 2);
-        //console.log(valueOfKeyObj);
-
-      if (keyOfObj.indexOf('-') > 1)
-      {
-          //font-style
-          let indexSlice = keyOfObj.indexOf('-');
-          let firstValue = keyOfObj.slice(0, indexSlice);
-          let secondValue = keyOfObj.slice(indexSlice + 1);
-          let upperSecondChar = secondValue.toUpperCase().slice(0,1);
-              secondValue = upperSecondChar + secondValue.slice(1);
-
-          keyOfObj = firstValue + secondValue;
-          console.log(keyOfObj);
-
-         // return keyOfObj;
-      }
-
-      obj[keyOfObj] = valueOfKeyObj;
-
-      console.log(obj);
-
-    }
+// Факультативно:
+//     1) Написать функции filter и map массива через метод reduce.
+//     Они должны делать то же, что и методы массива filter, map, но принимая сам массив в качестве 1го аргумента.
+//
+//     function filter(array, callback) {} === array.filter(callback)
+// function map(array, callback) {} === array.map(callback)
 
 
+ let arr = [1, 3, 4, 12, 6, 22, 123, 332, 7, 23];
+ let arrObj = [{id: 55, name: "Pol"},{id: 1, name: "Mike"},{id: 12, name: "Mark"},{id: 42, name: "John"},];
+ let res;
 
 
+ // res = arr.splice(3, 1);
+ // console.log(res);
+ // console.log(arr);
+ //
+ // res = arr.splice(4, 0, 99, 34);
+ // console.log(res);
+ // console.log(arr);
 
+ // res = arr.slice();
+ // console.log(res);
+ //
+ // let sliceRes = res.slice(2,3);
+ // console.log(arrRes);
 
-   // let count =0;
-   //
-   //  while (count === -1){
-   //     let indexSplit =  str.indexOf(';', count);
-   //
-   //
-   //  }
+ // res = arr.concat(23,33,23,0, 324)
+ // console.log(res);
 
+ // arr.forEach(item => console.log(item == 23));
 
-    /*
-      Expected result:
-      {
-        position: 'absolute',
-        boxSizing: 'content-box',
-        ...
-      }
-    */
-}
+ // arrObj.find(item => console.log(item.id == 34));
+ // arrObj.find(item => console.log(item.id == 55));
+ //    res = arrObj.find(item => item.id == 1);
+ //    console.log(res.name);
 
-  console.log(styleToObject(style));
+//  res = arrObj.filter(item => item.id >= 12);
+//  //console.log(res);
+//
+//  res.sort(function (a, b) {
+//  return a.id - b.id;
+//  })
+// console.log(res)
+//
+
+// res = arr.map(item => item + 23);
+// console.log(res);
+// res = res.map(item => item * res.length);
+// console.log(res);
+
 
