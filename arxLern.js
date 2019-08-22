@@ -90,6 +90,50 @@
 //
 //   console.log(styleToObject(style));
 //
+// let arr = [1, 3, 4, 12, 6, 22, 123, 332, 7, 23];
+// let arrObj = [{id: 55, name: "Pol"},{id: 1, name: "Mike"},{id: 12, name: "Mark"},{id: 42, name: "John"},];
+// let res;
+
+
+// res = arr.splice(3, 1);
+// console.log(res);
+// console.log(arr);
+//
+// res = arr.splice(4, 0, 99, 34);
+// console.log(res);
+// console.log(arr);
+
+// res = arr.slice();
+// console.log(res);
+//
+// let sliceRes = res.slice(2,3);
+// console.log(arrRes);
+
+// res = arr.concat(23,33,23,0, 324)
+// console.log(res);
+
+// arr.forEach(item => console.log(item == 23));
+
+// arrObj.find(item => console.log(item.id == 34));
+// arrObj.find(item => console.log(item.id == 55));
+//    res = arrObj.find(item => item.id == 1);
+//    console.log(res.name);
+
+//  res = arrObj.filter(item => item.id >= 12);
+//  //console.log(res);
+//
+//  res.sort(function (a, b) {
+//  return a.id - b.id;
+//  })
+// console.log(res)
+//
+
+// res = arr.map(item => item + 23);
+// console.log(res);
+// res = res.map(item => item * res.length);
+// console.log(res);
+
+
 
 //
 //
@@ -835,3 +879,65 @@
 //         alert( '2,3' );
 //         break;
 // }
+
+
+
+
+// // camelize("background-color") == 'backgroundColor';
+// // camelize("list-style-image") == 'listStyleImage';
+// // camelize("-webkit-transition") == 'WebkitTransition';
+//
+//  let cssExample = "background-color";
+//
+//
+//  function camelize(input) {
+//
+//   input = input.split('-');
+//   let prevValue = 1;
+//   let upCase = input.reduce(function(prevValue, value){
+//        let saveValue = value.slice(1);
+//        value = value.toUpperCase().slice(0,1) + saveValue;
+//        let endValue = prevValue + value;
+//        return endValue;
+//   });
+//
+//   console.log(upCase);
+//  }
+//
+//  camelize(cssExample);
+
+// let arr = [5, 3, 8, 1];
+//
+// let filtered = filterRange(arr, 1, 4);
+//
+// alert( filtered ); // 3,1 (совпадающие значения)
+//
+// alert( arr ); // 5,3,8,1 (без изменений)
+
+//
+
+// Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+//
+//     Функция должна возвращать новый массив и не изменять исходный.
+//
+//     Например:
+//
+
+
+// let arr = [5, 3, 8, 1];
+//
+//
+// function filterRange(arr, a, b){
+//
+//  let result = arr.filter(function (value) {
+//   if (value >= a && value <= b || value >= b && value <= a) {
+//    return value;
+//   }
+//
+//  });
+//  console.log(result);
+//
+// }
+//
+//
+// filterRange(arr, 2,5);
